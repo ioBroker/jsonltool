@@ -1,8 +1,13 @@
 {
-    "name": "@iobroker/jsonltool",
+    "name": "jsonltool",
     "version": "0.0.1",
     "bin": "./index.js",
     "dependencies": {
         "@alcalzone/jsonl-db": "^2.5.3"
+    },
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ioBroker/jsonltool"
     }
 }
