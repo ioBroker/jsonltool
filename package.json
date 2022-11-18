@@ -1,6 +1,13 @@
 {
     "name": "jsonltool",
     "version": "0.0.1",
+    "description": "A tool for working with JSONL files",
+    "homepage": "https://github.com/ioBroker/jsonltool",
+    "author": {
+        "email": "iobroker@fischer-ka.de",
+        "name": "ioBroker"
+    },
+    "license": "MIT",
     "bin": {
         "jsonltool": "./index.js"
     },
@@ -11,5 +18,8 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/ioBroker/jsonltool.git"
-    }
+    },
+    "files": [
+        "index.js"
+    ]
 }
