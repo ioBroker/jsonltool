@@ -1,6 +1,9 @@
 {
-    "name": "jsonltool",
-    "version": "0.0.2",
+    "name": "@iobroker/jsonltool",
+    "version": "0.0.4",
+    "publishConfig": {
+        "access": "public"
+    },
     "description": "A tool for working with JSONL files",
     "homepage": "https://github.com/ioBroker/jsonltool",
     "author": {

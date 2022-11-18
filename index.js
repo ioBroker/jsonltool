@@ -60,7 +60,7 @@ async function main() {
     const ownIps = queryOwnIps();
     let compressCount = 0;
 
-    if (config && config.states && config.states.type !== 'redis' && isLocalDbServer(config.states.host, ownIps)) {
+    if (config && config.states && config.states.type === 'jsonl' && isLocalDbServer(config.states.host, ownIps)) {
         const statesFile = path.join(dbPath, 'states.jsonl');
         try {
             if (fs.existsSync(statesFile)) {
@@ -75,7 +75,7 @@ async function main() {
         }
     }
 
-    if (config && config.objects && config.objects.type !== 'redis' && isLocalDbServer(config.objects.host, ownIps)) {
+    if (config && config.objects && config.objects.type === 'jsonl' && isLocalDbServer(config.objects.host, ownIps)) {
         const objectsFile = path.join(dbPath, 'objects.jsonl');
         try {
             if (fs.existsSync(objectsFile)) {
@@ -91,7 +91,7 @@ async function main() {
     }
 
     if (compressCount === 0) {
-        console.log('No JSONL files found to compress, skip');
+        console.log('No relevant JSONL files found to compress, skip');
     } else {
         console.log(`Compressed ${compressCount} JSONL files. Done`);
     }
