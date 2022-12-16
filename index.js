@@ -32,7 +32,7 @@ function isLocalDbServer(host, ownIpArr) {
 }
 
 async function compressDB(dbPath) {
-    let db = new JsonlDB(dbPath);
+    let db = new JsonlDB(dbPath, { ignoreReadErrors: true });
     try {
         await db.open();
     } catch (e) {
