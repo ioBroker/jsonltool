@@ -14,3 +14,10 @@ cd /opt/iobroker/iobroker-data
 npx @iobroker/jsonltool@latest
 ```
 
+## Changelog
+
+### 0.0.5
+* ignore read errors when opening the database
+
+### 0.0.4
+* initial release

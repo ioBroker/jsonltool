@@ -32,8 +32,18 @@ function isLocalDbServer(host, ownIpArr) {
 }
 
 async function compressDB(dbPath) {
-    const db = new JsonlDB(dbPath);
-    await db.open();
+    let db = new JsonlDB(dbPath);
+    try {
+        await db.open();
+    } catch (e) {
+        if (e.message.includes('Invalid data')) {
+            console.log(`The database file ${dbPath} have corrupt lines. Ignoring these lines. Please check data afterwards!`);
+            db = new JsonlDB(dbPath, { ignoreReadErrors: true });
+            await db.open();
+        } else {
+            throw e;
+        }
+    }
     await db.compress();
     await db.close();
 }
